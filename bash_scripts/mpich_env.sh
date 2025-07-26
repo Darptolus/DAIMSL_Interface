@@ -1,0 +1,7 @@
+export PATH="/home/droaperdomo/tools/mpich/bin:${PATH:-}"
+export LIBRARY_PATH="/home/droaperdomo/tools/mpich/lib:${LIBRARY_PATH:-}"
+export LD_LIBRARY_PATH="/home/droaperdomo/tools/mpich/lib:${LD_LIBRARY_PATH:-}"
+export CPATH="/home/droaperdomo/tools/mpich/include:${CPATH:-}"
+export C_INCLUDE_PATH="/home/droaperdomo/tools/mpich/include:${C_INCLUDE_PATH:-}"
+export CPLUS_INCLUDE_PATH="/home/droaperdomo/tools/mpich/include:${CPLUS_INCLUDE_PATH:-}"
+export PKG_CONFIG_PATH="/home/droaperdomo/tools/mpich/lib/pkgconfig:${PKG_CONFIG_PATH:-}"

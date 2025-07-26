@@ -1,0 +1,7 @@
+PATH=${HOME}/tools/hdf5_bin/bin
+LD_LIBRARY_PATH=${HOME}/tools/hdf5_bin/lib:${HOME}/tools/hdf5_bin/lib64
+LIBRARY_PATH=${HOME}/tools/hdf5_bin/lib:${HOME}/tools/hdf5_bin/lib64
+CPATH=${HOME}/tools/hdf5_bin/include/conduit
+C_INCLUDE_PATH=${HOME}/tools/hdf5_bin/include/conduit
+CPLUS_INCLUDE_PATH=${HOME}/tools/hdf5_bin/include/conduit
+PKG_CONFIG_PATH=${HOME}/tools/hdf5_bin/lib/pkgconfig

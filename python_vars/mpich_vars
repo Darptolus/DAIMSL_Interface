@@ -1,0 +1,7 @@
+PATH=${HOME}/tools/mpich/bin
+LD_LIBRARY_PATH=${HOME}/tools/mpich/lib:${HOME}/tools/mpich/lib64
+LIBRARY_PATH=${HOME}/tools/mpich/lib:${HOME}/tools/mpich/lib64
+CPATH=${HOME}/tools/mpich/include
+C_INCLUDE_PATH=${HOME}/tools/mpich/include
+CPLUS_INCLUDE_PATH=${HOME}/tools/mpich/include
+PKG_CONFIG_PATH=${HOME}/tools/mpich/lib/pkgconfig

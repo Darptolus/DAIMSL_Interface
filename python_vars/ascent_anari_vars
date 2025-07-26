@@ -1,0 +1,8 @@
+ASCENT_DIR=${HOME}/ascent/obj_bin/install/ascent-checkout
+PATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/bin
+LD_LIBRARY_PATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/lib:${HOME}/ascent_anari/obj_bin/install/ascent-checkout/lib64
+LIBRARY_PATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/lib:${HOME}/ascent_anari/obj_bin/install/ascent-checkout/lib64
+CPATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/include/ascent
+C_INCLUDE_PATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/include/ascent
+CPLUS_INCLUDE_PATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/include/ascent
+PKG_CONFIG_PATH=${HOME}/ascent_anari/obj_bin/install/ascent-checkout/lib/pkgconfig
