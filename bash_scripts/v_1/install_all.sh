@@ -156,6 +156,7 @@ source ${DAIMSL_SCRIPTS_DIR}/hdf5_vars.sh
 # Install LAMMPS
 cd ${DAIMSL_DIR}
 git clone -b release --depth=1 https://github.com/lammps/lammps.git lammps
+cd lammps
 lammpspath=${DAIMSL_DIR}/lammps
 objpath=${lammpspath}/obj_bin
 

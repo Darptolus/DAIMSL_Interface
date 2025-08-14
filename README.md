@@ -10,6 +10,7 @@ mkdir tools
 ## Load initial variables
 ```
 cd DAIMSL_Interface/bash_scripts
+chmod +x *.sh
 source load_vars_0.sh
 ```
 
@@ -17,7 +18,7 @@ source load_vars_0.sh
 ```
 sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt-get install -y git python3 pciutils build-essential gcc cmake curl python3-pip python3-venv libfftw3-dev libjpeg-dev libpng-dev mpich libmpich-dev mpich-doc nvidia-cuda-toolkit libxi-dev libxrandr-dev libxcursor-dev libxinerama-dev ffmpeg libhdf5-dev hdf5-tools zlib1g-dev libvtk9-dev qtbase5-dev libwayland-dev libxkbcommon-dev xorg-dev libboost-program-options-dev libboost-all-dev libtbb-dev libglfw3-dev libglew-dev libglm-dev libgl1-mesa-dev libx11-dev 
+sudo apt-get install -y git python3 pciutils build-essential gcc cmake curl python3-pip python3-venv libfftw3-dev libjpeg-dev libpng-dev mpich libmpich-dev mpich-doc nvidia-cuda-toolkit libxi-dev libxrandr-dev libxcursor-dev libxinerama-dev ffmpeg libhdf5-dev hdf5-tools zlib1g-dev libvtk9-dev qtbase5-dev libwayland-dev libxkbcommon-dev xorg-dev libboost-program-options-dev libboost-all-dev libtbb-dev libglfw3-dev libglew-dev libglm-dev libgl1-mesa-dev libx11-dev nlohmann-json3-dev
 ```
 
 ## Polaris
@@ -228,22 +229,24 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/anariusd_install.sh anariusd_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/anariusd_vars.sh
 ```
 
-### LAMMPS Installation
+## LAMMPS Installation
 ```
 cd ${DAIMSL_DIR}
+git clone -b release --depth=1 https://github.com/lammps/lammps.git lammps
+cd lammps
 
-ln -s ${DAIMSL_SCRIPTS_DIR}/_install.sh _install.sh
-./_install.sh
+ln -s ${DAIMSL_SCRIPTS_DIR}/lammps_install.sh lammps_install.sh
+./lammps_install.sh
 ```
 
-#### Update LAMMPS Variables
+### Update LAMMPS Variables
 ```
-source ${DAIMSL_SCRIPTS_DIR}/_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/lammps_vars.sh
 ```
 
-### Tests
+## Tests
 
-#### Cube USD
+### Cube USD
 ```
 cd ${DAIMSL_DIR}/DAIMSL_Interface/examples/cube
 ./build.sh
@@ -252,6 +255,35 @@ export ANARI_LIBRARY=usd
 ```
 Generates USD inside folder Session_
 
-#### LAMMPS Cube USD
+### LAMMPS Cube USD
+```
+cd ${DAIMSL_DIR}/DAIMSL_Interface/examples/lammps/cube
+./build.sh
+export ANARI_LIBRARY=usd
+./run-usd.sh
+```
+Generates USD inside folder Session_
 
 
+
+## All Vars
+```
+cd ${DAIMSL_DIR}
+source daimsl_venv/bin/activate
+source ${DAIMSL_SCRIPTS_DIR}/load_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/mpich_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/ascent_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/conduit_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/anari_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/anarisdk_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/hdf5_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/zlib_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/onetbb2021_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/glfw_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/opensubdiv_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/openusd2411_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/connectsamples_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/anariusd_vars.sh
+source ${DAIMSL_SCRIPTS_DIR}/lammps_vars.sh
+
+```
