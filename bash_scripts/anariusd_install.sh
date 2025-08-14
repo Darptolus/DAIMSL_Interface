@@ -17,7 +17,6 @@ anaripath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.10.0/
 openusdpath=${DAIMSL_TOOLS_DIR}/openusd2411/obj_bin
 # openusdpath=${HOME}/openusd/obj_bin
 
-
 export CMAKE_OPTS=" \
   -DCMAKE_CXX_STANDARD=17 \
   -DCMAKE_INSTALL_PREFIX=${objpath} \
@@ -31,17 +30,17 @@ export CMAKE_OPTS=" \
   -DINSTALL_USD_DEPS=ON \
 "
 
+cmake -S . -B build/ ${CMAKE_OPTS}
+
+cmake --build build --parallel 4
+cmake --install build
+
   # -DINSTALL_ANARI_DEVICE_USD=ON \
 
   # -DZLIB_ROOT=${zlibpath} \
   # -DPXR_ENABLE_PYTHON=ON \
   # -DUSD_USE_PYTHON=OFF \
   # -DBUILD_PYTHON_BINDINGS=OFF \
-
-cmake -S . -B build/ ${CMAKE_OPTS}
-
-cmake --build build --parallel 4
-cmake --install build
 
   # -DUSD_DEVICE_USE_OMNIVERSE=ON \
   # -DINSTALL_OMNIVERSE_DEPS=ON \

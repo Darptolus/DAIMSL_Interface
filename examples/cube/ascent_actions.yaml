@@ -1,0 +1,15 @@
+- action: "add_scenes"
+  scenes:
+    scene1:
+      plots:
+        plot1:
+          type: "anari_pseudocolor"
+          field: "velocity"
+      renders:
+        r1:
+          image_prefix: "cube_render"
+          camera:
+            look_at: [0.0, 0.0, 0.0]
+            position: [25.0, 25.0, 25.0]
+          image_width: 1024
+          image_height: 768
