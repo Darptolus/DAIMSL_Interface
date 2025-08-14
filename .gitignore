@@ -1,4 +1,8 @@
 *.o
 *.mpg
 *.mp4
+
+
+
+
 log.lammps

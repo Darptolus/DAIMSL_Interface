@@ -1,18 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
 # ANARI-USD
 # omniusd=${HOME}/ascent/omniverse_anari
-anariusd=${HOME}/anariusd
+anariusd=${DAIMSL_DIR}/anariusd
 objpath=${anariusd}/obj_bin
 
-anaripath=${HOME}/ascent_anari/obj_bin/install/anari-v0.10.0/
-openusd=${HOME}/openusd/obj_bin
+# anaripath=${HOME}/ascent_anari/obj_bin/install/anari-v0.10.0/
+# anaripath=${HOME}/ascent/anari_sdk/obj_bin
+# anaripath=${HOME}/ascent_anari/obj_bin_p/install/anari-v0.14.0/
+anaripath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.10.0/
 
-mpichpath=${HOME}/tools/mpich/bin
+# anaripath=${HOME}/anarisdk
 
-export FC=${mpichpath}/mpif90
-export CC=${mpichpath}/mpicc
-export CXX=${mpichpath}/mpic++
+openusdpath=${DAIMSL_TOOLS_DIR}/openusd2411/obj_bin
+# openusdpath=${HOME}/openusd/obj_bin
+
 
 export CMAKE_OPTS=" \
   -DCMAKE_CXX_STANDARD=17 \
@@ -21,18 +23,22 @@ export CMAKE_OPTS=" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
   -DANARI_ROOT_DIR=${anaripath} \
-  -DUSD_ROOT_DIR=${openusd} \
-  -DINSTALL_ANARI_DEPS=OFF \
-  -DINSTALL_ANARI_COMPILE_DEPS=OFF \
+  -DUSD_ROOT_DIR=${openusdpath} \
+  -DINSTALL_ANARI_DEPS=ON \
+  -DINSTALL_ANARI_COMPILE_DEPS=ON \
   -DINSTALL_USD_DEPS=ON \
 "
 
   # -DINSTALL_ANARI_DEVICE_USD=ON \
 
+  # -DZLIB_ROOT=${zlibpath} \
+  # -DPXR_ENABLE_PYTHON=ON \
+  # -DUSD_USE_PYTHON=OFF \
+  # -DBUILD_PYTHON_BINDINGS=OFF \
 
 cmake -S . -B build/ ${CMAKE_OPTS}
 
-# cmake --build build --parallel 4
+cmake --build build --parallel 4
 # cmake --install build
 
   # -DUSD_DEVICE_USE_OMNIVERSE=ON \

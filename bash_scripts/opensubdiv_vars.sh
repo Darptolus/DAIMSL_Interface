@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# OpenSubdir
-mypath=${HOME}/opensubdiv/obj_bin
+# OpenSubdiv
+mypath=${DAIMSL_TOOLS_DIR}/opensubdiv/obj_bin
 
 subdir=$mypath/bin
 if [ -d "$subdir" ]; then

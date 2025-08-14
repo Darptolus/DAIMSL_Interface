@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# Anari
-mypath=${HOME}/anarisdk/obj_bin/
+# Anari-SDK (Installed with Ascent_Anari)
+# mypath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.14.0
+mypath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.10.0
 
 subdir=$mypath/bin
 if [ -d "$subdir" ]; then
@@ -21,6 +22,20 @@ if [ -d "$subdir" ]; then
 fi
 
 subdir=$mypath/include/anari
+if [ -d "$subdir" ]; then
+	export CPATH=$subdir:$CPATH
+	export C_INCLUDE_PATH=$subdir:$C_INCLUDE_PATH
+	export CPLUS_INCLUDE_PATH=$subdir:$CPLUS_INCLUDE_PATH
+fi
+
+subdir=$mypath/include/anari/backend
+if [ -d "$subdir" ]; then
+	export CPATH=$subdir:$CPATH
+	export C_INCLUDE_PATH=$subdir:$C_INCLUDE_PATH
+	export CPLUS_INCLUDE_PATH=$subdir:$CPLUS_INCLUDE_PATH
+fi
+
+subdir=$mypath/include/anari/backend/helium
 if [ -d "$subdir" ]; then
 	export CPATH=$subdir:$CPATH
 	export C_INCLUDE_PATH=$subdir:$C_INCLUDE_PATH

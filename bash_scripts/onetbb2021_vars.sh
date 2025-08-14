@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# OneTBB
-mypath=${HOME}/onetbb2021/obj_bin
+# OneTBB 2021
+mypath=${DAIMSL_TOOLS_DIR}/onetbb2021/obj_bin
 
 subdir=$mypath/bin
 if [ -d "$subdir" ]; then

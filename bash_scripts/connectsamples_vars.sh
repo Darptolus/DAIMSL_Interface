@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # connect-samples
-mypath=/home/droaperdomo/tools/connectsamples/_install/linux-x86_64/release
-mypath2=/home/droaperdomo/tools/connectsamples/_install/target-deps
+mypath=${DAIMSL_TOOLS_DIR}/connectsamples/_install/linux-x86_64/release
+mypath2=${DAIMSL_TOOLS_DIR}/connectsamples/_install/target-deps
 
 subdir=$mypath/bin
 if [ -d "$subdir" ]; then

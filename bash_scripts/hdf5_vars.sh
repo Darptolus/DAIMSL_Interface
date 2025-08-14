@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# HDF5
-mypath=/home/droaperdomo/tools/hdf5_bin
+# HDF5 (Installed with Ascent_Anari)
+mypath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/hdf5-1.14.1-2
+
 export HDF5_DIR=$mypath
 
 subdir=$mypath/bin

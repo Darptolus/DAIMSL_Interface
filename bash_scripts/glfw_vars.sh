@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # GLFW
-mypath=${HOME}/glfw/obj_bin
-mypath2=${HOME}/glfw
+mypath=${DAIMSL_TOOLS_DIR}/glfw/obj_bin
+mypath2=${DAIMSL_TOOLS_DIR}/glfw
 
 subdir=$mypath/bin
 if [ -d "$subdir" ]; then

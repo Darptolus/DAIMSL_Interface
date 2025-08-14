@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Ascents
+# Ascent (Installed with Ascent_Anari)
 # mypath=/home/droaperdomo/ascent/scripts/build_ascent/install/ascent-checkout
-mypath=${HOME}/ascent/obj_bin/install/ascent-checkout
+mypath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/ascent-checkout
 export ASCENT_DIR=$mypath
 
 subdir=$mypath/bin

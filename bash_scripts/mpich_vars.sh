@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # MPICH
-# mypath=/home/droaperdomo/ascent/scripts/build_ascent/install/ascent-checkout
-mypath=/home/droaperdomo/tools/mpich
+mypath=${DAIMSL_TOOLS_DIR}/mpich
 
 subdir=$mypath/bin
 if [ -d "$subdir" ]; then
@@ -33,3 +32,14 @@ if [ -d "$subdir" ]; then
 	export PKG_CONFIG_PATH=$subdir:$PKG_CONFIG_PATH
 fi
 
+export MPICH_DIR=${DAIMSL_TOOLS_DIR}/mpich
+
+export CC=${MPICH_DIR}/bin/mpicc
+export CXX=${MPICH_DIR}/bin/mpic++
+export FTN=${MPICH_DIR}/bin/mpif90
+
+export MPICXX=${MPICH_DIR}/bin/mpic++
+
+export MPI_C_COMPILER=${MPICH_DIR}/bin/mpicc
+export MPI_CXX_COMPILER=${MPICH_DIR}/bin/mpic++
+export MPIEXEC_EXECUTABLE=${MPICH_DIR}/bin/mpiexec

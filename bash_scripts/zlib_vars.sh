@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# Zlib
-mypath=/home/droaperdomo/tools/zlib_bin
+# Zlib (Installed with Ascent_Anari)
+mypath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/zlib-1.3.1
+
 export ZLIB_DIR=$mypath
 
 subdir=$mypath/bin

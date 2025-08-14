@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# Conduit
-# mypath=/home/droaperdomo/conduit/install-debug/
-# mypath=${HOME}/ascent/obj_bin/install/conduit-v0.9.4
-mypath=${HOME}/ascent_anari/obj_bin/install/conduit-v0.9.4
+# Conduit (Installed with Ascent_Anari)
+mypath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/conduit-v0.9.4
 export CONDUIT_DIR=$mypath
 
 subdir=$mypath/bin
