@@ -1,7 +1,7 @@
 #!/bin/bash
 export PYTHON_DIR=${DAIMSL_DIR}/daimsl_venv/venv/
 export ASCENT_DIR=${DAIMSL_DIR}/ascent_anari/obj_bin
-export anari_DIR=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.14.0
+export anari_DIR=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.10.0
 
 export Python_ROOT_DIR=${PYTHON_DIR}
 

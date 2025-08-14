@@ -8,6 +8,8 @@ objpath=${anariusd}/obj_bin
 # anaripath=${HOME}/ascent_anari/obj_bin/install/anari-v0.10.0/
 # anaripath=${HOME}/ascent/anari_sdk/obj_bin
 # anaripath=${HOME}/ascent_anari/obj_bin_p/install/anari-v0.14.0/
+# export ANARI_DIR=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.10.0/
+
 anaripath=${DAIMSL_DIR}/ascent_anari/obj_bin/install/anari-v0.10.0/
 
 # anaripath=${HOME}/anarisdk
@@ -39,7 +41,7 @@ export CMAKE_OPTS=" \
 cmake -S . -B build/ ${CMAKE_OPTS}
 
 cmake --build build --parallel 4
-# cmake --install build
+cmake --install build
 
   # -DUSD_DEVICE_USE_OMNIVERSE=ON \
   # -DINSTALL_OMNIVERSE_DEPS=ON \
