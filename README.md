@@ -1,27 +1,30 @@
-# DAIMSL_Interface
+# DAIMSL Interface
 Installation scripts to integrate HPC simulations with a visualization environment
 
+```
 cd ${HOME}
 mkdir DAIMSL
 cd DAIMSL
 git clone https://github.com/Darptolus/DAIMSL_Interface
 mkdir tools
+```
 
-## Load initial variables
+## 0. Load initial variables
 ```
 cd DAIMSL_Interface/bash_scripts
 chmod +x *.sh
 source load_vars_0.sh
 ```
+## 1. Prerequisites
 
-## Linux Workstation
+### Linux Workstation
 ```
 sudo apt-get update && sudo apt-get upgrade -y
 
 sudo apt-get install -y git python3 pciutils build-essential gcc cmake curl python3-pip python3-venv libfftw3-dev libjpeg-dev libpng-dev mpich libmpich-dev mpich-doc nvidia-cuda-toolkit libxi-dev libxrandr-dev libxcursor-dev libxinerama-dev ffmpeg libhdf5-dev hdf5-tools zlib1g-dev libvtk9-dev qtbase5-dev libwayland-dev libxkbcommon-dev xorg-dev libboost-program-options-dev libboost-all-dev libtbb-dev libglfw3-dev libglew-dev libglm-dev libgl1-mesa-dev libx11-dev nlohmann-json3-dev
 ```
 
-## Polaris
+### Polaris
 
 ```
 module load craype-accel-nvidia80
@@ -56,7 +59,7 @@ export MPIEXEC_EXECUTABLE=/opt/cray/pals/1.3.4/bin/mpiexec
 ```
 
 
-## Set Up Python Environment
+## 2. Set Up Python Environment
 ```
 cd ${DAIMSL_DIR}
 
@@ -67,7 +70,7 @@ pip install ipykernel python-dotenv Jinja2 PyOpenGL PySide6
 ```
 
 
-## MPI Installation
+## 3. MPI Installation
 ```
 cd ${DAIMSL_TOOLS_DIR}
 ln -s ${DAIMSL_SCRIPTS_DIR}/mpich_install.sh mpich_install.sh
@@ -79,7 +82,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/mpich_install.sh mpich_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/mpich_vars.sh
 ```
 
-## Ascent+Anari Installation
+## 4. Ascent+Anari Installation
 ```
 cd ${DAIMSL_DIR}
 git clone --recursive -b task/2025_05_develop_anari --depth=1 https://github.com/Alpine-DAV/ascent/ ascent_anari
@@ -128,7 +131,7 @@ source ${DAIMSL_SCRIPTS_DIR}/hdf5_vars.sh
 source ${DAIMSL_SCRIPTS_DIR}/zlib_vars.sh
 ```
 
-## OneTBB Installation
+## 5. OneTBB Installation
 ```
 cd ${DAIMSL_TOOLS_DIR}
 git clone --branch v2021.13.0 --depth=1 https://github.com/oneapi-src/oneTBB.git onetbb2021
@@ -146,7 +149,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/onetbb2021_install.sh onetbb2021_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/onetbb2021_vars.sh
 ```
 
-## GLFW Installation
+## 6. GLFW Installation
 ```
 cd ${DAIMSL_TOOLS_DIR}
 git clone --recursive --depth=1 https://github.com/glfw/glfw glfw
@@ -165,7 +168,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/glfw_install.sh glfw_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/glfw_vars.sh
 ```
 
-## OpenSubdiv Installation
+## 7. OpenSubdiv Installation
 ```
 cd ${DAIMSL_TOOLS_DIR}
 git clone https://github.com/PixarAnimationStudios/OpenSubdiv opensubdiv
@@ -182,7 +185,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/opensubdiv_install.sh opensubdiv_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/opensubdiv_vars.sh
 ```
 
-## OpenUSD Installation (v24.11)
+## 8. OpenUSD Installation (v24.11)
 ```
 cd ${DAIMSL_TOOLS_DIR}
 git clone -b v24.11 --depth=1 https://github.com/PixarAnimationStudios/OpenUSD openusd2411
@@ -198,7 +201,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/openusd2411_install.sh openusd2411_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/openusd2411_vars.sh
 ```
 
-## Connect-Samples Installation
+## 9. Connect-Samples Installation
 ```
 cd ${DAIMSL_TOOLS_DIR}
 git clone --depth=1 https://github.com/NVIDIA-Omniverse/connect-samples connectsamples
@@ -212,7 +215,7 @@ cd connectsamples
 source ${DAIMSL_SCRIPTS_DIR}/connectsamples_vars.sh
 ```
 
-## Anari-USD Installation
+## 10. Anari-USD Installation
 ```
 cd ${DAIMSL_DIR}
 git clone --recursive https://github.com/NVIDIA-Omniverse/ANARI-USD anariusd
@@ -229,7 +232,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/anariusd_install.sh anariusd_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/anariusd_vars.sh
 ```
 
-## LAMMPS Installation
+## 11. LAMMPS Installation
 ```
 cd ${DAIMSL_DIR}
 git clone -b release --depth=1 https://github.com/lammps/lammps.git lammps
@@ -244,7 +247,7 @@ ln -s ${DAIMSL_SCRIPTS_DIR}/lammps_install.sh lammps_install.sh
 source ${DAIMSL_SCRIPTS_DIR}/lammps_vars.sh
 ```
 
-## Tests
+## 12. Tests
 
 ### Cube USD
 ```
