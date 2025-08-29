@@ -270,6 +270,12 @@ Generates USD inside folder Session_
 
 
 ## All Vars
+### Script
+```
+cd ${DAIMSL_DIR}/DAIMSL_Interface/bash_scripts/
+```
+
+### Manual 
 ```
 cd ${DAIMSL_DIR}
 source daimsl_venv/bin/activate

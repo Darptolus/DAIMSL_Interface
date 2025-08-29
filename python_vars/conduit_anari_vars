@@ -1,4 +1,4 @@
-CONDUIT_DIR=${HOME}/ascent/obj_bin/install/conduit-v0.9.4
+CONDUIT_DIR=${HOME}/ascent_anari/obj_bin/install/conduit-v0.9.4
 PATH=${CONDUIT_DIR}/bin
 LD_LIBRARY_PATH=${CONDUIT_DIR}/lib:${CONDUIT_DIR}/lib64
 LIBRARY_PATH=${CONDUIT_DIR}/lib:${CONDUIT_DIR}/lib64
